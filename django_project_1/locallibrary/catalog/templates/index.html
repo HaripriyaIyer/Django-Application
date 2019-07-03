@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Book Search Home</h1>
+  <p>Welcome to Book Search</p>
+  <p>The library has the following record counts:</p>
+  <ul>
+    
+    <li><strong>Total Book Keywords:</strong> {{ num_keywords }}</li>
+    <li><strong>Total Number of Books:</strong> {{ num_books }}</li>
+    
+  </ul>
+  <br>
+  <h4>Please Navigate to the links above to explore </h4>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-light"><a href="{% url 'keyword_search' %}" class="btn btn-light btn-lg active btn-block">Book Search</a></li>
+      <li class="list-group-item list-group-item-light"><a href="{% url 'book_view' %}" class="btn btn-light btn-lg active btn-block">Explore Books</a></li>
+    <li class="list-group-item list-group-item-light"><a href="{% url 'keyword_view' %}" class="btn btn-light btn-lg active btn-block">Explore Keywords</a></li>
+    
+
+  	
+{% endblock content %}
+  

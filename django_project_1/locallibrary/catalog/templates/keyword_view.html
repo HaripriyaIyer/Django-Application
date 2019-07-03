@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Book Search Home</h1>
+  <p>List of Popular Keywords for Book Search</p>
+  <div class="article-metadata">
+  {% if keywords %}
+    <ul class="list-group">
+    {% for k in keywords %}
+        <li class="list-group-item list-group-item-light">{{ k.keyword }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Keywords are available.</p>
+  </div>
+  {% endif %}
+{% endblock content %}
+
+  

@@ -1,0 +1,69 @@
+{% extends "base_generic.html" %}
+
+  {% block content %}
+  <h3 style="margin-top: 0">Explore the Books in the Inventory</h3>
+  <form class="border-class" method="GET",action = "{% url 'keyword_search' %}">
+    {% csrf_token %}
+    <div class="well">
+      <br>
+      <h4 style="margin-top: 0">Select a Keyword </h4>
+      
+      <div class="row">
+        <div class="dropdown col-sm-4 col-md-3">
+          <select class="selectpicker show-tick" data-style="btn-primary" name="list">
+            <option value="">-------------------------------------------------</option>
+            {% for n in category %}
+            <option value="{{n.keyword}}">{{n.keyword}}</option>
+            {% endfor %}
+          </select>
+        </div>
+       </div>
+       <br>
+       <div class="checkbox">
+        <input type="checkbox" name="yes" value="yes" >Filter Open Media Published Books?
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">
+        <span class="glyphicon glyphicon-search"></span> Search
+      </button>
+      <br>
+      
+    </div>
+  </form>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Page</th>
+        <th>Postion</th>
+        <th>Published Date</th>
+        <th>Sales Rank</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for key in res %}
+        <tr>
+          <td>{{ key.keyword_s }}</td>
+          <td>{{ key.title }}</td>
+          <td>{{ key.publisher }}</td>
+          <td>{{ key.author }}</td>
+          <td>{{ key.page }}</td>
+          <td>{{ key.position }}</td>
+          <td>{{ key.publication_date }}</td>
+          <td>{{ key.sales_rank }}</td>
+          <td><img src="{{key.image}}"></td>
+
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="9">No data for this selection</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,5 +1,4 @@
-# Django-Keyword-Search-App
-Book Search Django Application
+# Book Search Django Application
 
 This project is a simple Django web application.
 A sample application to help understand the flow between the Model-View-Templates in a basic django framework.

@@ -8,4 +8,4 @@ You can see three pages in the application, the first is the landing page,then t
 and the final page which gives the user a search option to look up books using a certain keyword.
 
 
-The project is deployed on heroku and the link is : https://demoappbooksearch.herokuapp.com/catalog/
+The project is deployed on heroku and the link is : https://booksearchappdemo.herokuapp.com/catalog/
